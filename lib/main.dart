@@ -23,13 +23,13 @@ class HomeState extends State<Home> {
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  String resultadoText = "Resultado";
+  String resultadoText = ""; //aqui sai o resultado
 
   void resetFields() {
     weightController.text = "";
     heightController.text = "";
     setState(() {
-      resultadoText = "Resultado";
+      resultadoText = ""; //aqui sai o resultado
       formKey = GlobalKey<FormState>();
     });
   }
@@ -88,7 +88,7 @@ class HomeState extends State<Home> {
                   controller: weightController,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "insira seu peso";
+                      return "Insira seu Peso";
                     }
                     return null;
                   },
@@ -103,7 +103,7 @@ class HomeState extends State<Home> {
                   controller: heightController,
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "insira sua altura";
+                      return "Insira sua Altura";
                     }
                     return null;
                   },
